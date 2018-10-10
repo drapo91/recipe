@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <title>Index Page</title>
 </head>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    td, tr, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+</style>
 <body>
 
-    <h1 th:text="'This is index page'">Index Page</h1>
+    <h2 th:text="'Recipes List'">Index Page</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Recipe Name</th>
+                <th>Difficulty</th>
+                <th>Preparation Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="recipe: ${recipes}">
+                <td th:text="${recipe.getDescription()}"></td>
+                <td th:text="${recipe.getDifficulty()}"></td>
+                <td th:text="${recipe.getPrepTime()}"></td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>
