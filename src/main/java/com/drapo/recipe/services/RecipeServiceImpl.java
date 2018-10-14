@@ -1,4 +1,4 @@
-package com.drapo.recipe.bootstrap.services;
+package com.drapo.recipe.services;
 
 import com.drapo.recipe.model.Recipe;
 import com.drapo.recipe.repositories.RecipeRepository;

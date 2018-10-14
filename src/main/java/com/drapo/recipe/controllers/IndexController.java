@@ -1,6 +1,6 @@
 package com.drapo.recipe.controllers;
 
-import com.drapo.recipe.bootstrap.services.RecipeServiceImpl;
+import com.drapo.recipe.services.RecipeServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
