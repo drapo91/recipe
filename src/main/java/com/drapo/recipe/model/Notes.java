@@ -38,4 +38,9 @@ public class Notes {
     public void setRecipeNotes(String recipeNotes) {
         this.recipeNotes = recipeNotes;
     }
+
+    @Override
+    public String toString() {
+        return recipeNotes;
+    }
 }

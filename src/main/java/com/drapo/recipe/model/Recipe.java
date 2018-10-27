@@ -14,6 +14,7 @@ public class Recipe {
     private String description;
     private Integer prepTime;
     private Integer cookTime;
+    private Integer servings;
     private String source;
     private String url;
 
@@ -67,6 +68,14 @@ public class Recipe {
 
     public void setCookTime(Integer cookTime) {
         this.cookTime = cookTime;
+    }
+
+    public Integer getServings() {
+        return servings;
+    }
+
+    public void setServings(Integer servings) {
+        this.servings = servings;
     }
 
     public String getSource() {

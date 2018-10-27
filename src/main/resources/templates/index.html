@@ -32,14 +32,16 @@
                             <table class="table table-hover">
                                 <thead class="thead-inverse">
                                 <tr>
-                                    <th>Recipe Name</th>
-                                    <th>Difficulty</th>
+                                    <th>ID</th>
+                                    <th>Description</th>
+                                    <th>View</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr th:each="recipe: ${recipes}">
+                                    <td th:text="${recipe.getId()}"></td>
                                     <td th:text="${recipe.getDescription()}"></td>
-                                    <td th:text="${recipe.getDifficulty()}"></td>
+                                    <td><a href="#" th:href="@{'/recipe/show/'+${recipe.id}}">View</a> </td>
                                 </tr>
                                 </tbody>
                             </table>
