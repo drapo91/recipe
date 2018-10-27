@@ -1,5 +1,7 @@
 package com.drapo.recipe.services;
 
+import com.drapo.recipe.converters.RecipeCommandToRecipe;
+import com.drapo.recipe.converters.RecipeToRecipeCommand;
 import com.drapo.recipe.model.Recipe;
 import com.drapo.recipe.repositories.RecipeRepository;
 import org.junit.Before;
@@ -22,10 +24,16 @@ public class RecipeServiceImplTest {
     @Mock
     RecipeRepository recipeRepository;
 
+    @Mock
+    RecipeToRecipeCommand recipeToRecipeCommand;
+
+    @Mock
+    RecipeCommandToRecipe recipeCommandToRecipe;
+
     @Before
     public void setUp(){
         MockitoAnnotations.initMocks(this);
-        recipeService=new RecipeServiceImpl(recipeRepository);
+        recipeService=new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
     }
 
     @Test
