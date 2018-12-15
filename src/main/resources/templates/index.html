@@ -35,6 +35,8 @@
                                     <th>ID</th>
                                     <th>Description</th>
                                     <th>View</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -43,6 +45,7 @@
                                     <td th:text="${recipe.getDescription()}"></td>
                                     <td><a href="#" th:href="@{'/recipe/'+ ${recipe.id} +'/show'}">View</a> </td>
                                     <td><a href="#" th:href="@{'/recipe/'+ ${recipe.id} +'/update'}">Update</a> </td>
+                                    <td><a href="#" th:href="@{'/recipe/'+ ${recipe.id} +'/delete'}">Delete</a> </td>
                                 </tr>
                                 </tbody>
                             </table>

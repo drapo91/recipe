@@ -9,12 +9,9 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 public class RecipeServiceImplTest {
@@ -54,7 +51,7 @@ public class RecipeServiceImplTest {
     @Test
     public void getRecipes() {
         Recipe recipe=new Recipe();
-        HashSet recipeData=new HashSet();
+        HashSet<Recipe> recipeData=new HashSet<>();
         recipeData.add(recipe);
 
         when(recipeRepository.findAll()).thenReturn(recipeData);
@@ -64,4 +61,28 @@ public class RecipeServiceImplTest {
         assertEquals(recipes.size(), 1);
         verify(recipeRepository, times(1)).findAll();
     }
+
+
+    @Test
+    public void deleteById(){
+        Long idToDelete = 5L;
+
+        recipeService.deleteById(idToDelete);
+
+        verify(recipeRepository, times(1)).deleteById(anyLong());
+    }
+//    @Test
+//    public void deleteRecipe(){
+//        Recipe recipe = new Recipe();
+//        Recipe recipeToDelete = new Recipe();
+//        List<Recipe> recipes = new ArrayList<>();
+//        recipes.addAll(Arrays.asList(recipe, recipeToDelete));
+//        recipes.remove(recipeToDelete);
+//
+//        doReturn(recipes).when(recipeRepository).delete(any(Recipe.class));
+//
+//        Set<Recipe> remaininedRecipes = recipeService.deleteRecipe();
+//
+//        assertTrue(!remaininedRecipes.contains(recipeToDelete));
+//    }
 }
